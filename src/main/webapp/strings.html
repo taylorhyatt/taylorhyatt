@@ -1,0 +1,127 @@
+<style>
+body {
+	background: url(http://3.bp.blogspot.com/_eYNXA0gKwI0/TUHrbTFx8wI/AAAAAAAAAM4/x3HZ6OlKP68/s1600/Gibson+Les+Paul+Guitar+Fretboard+Fingerboard+Neck+Music+Desktop+HD+Wallpaper+1215x799+www.greatguitarsound.blogspot.com.jpg) no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+</style>
+<div class="card">
+	<div class="card-header">
+		<button class="btn btn-success" ng-click="previousQuestion()">Previous
+		</button>
+		<span class="float-right"> </span>
+		<button class="btn btn-success" ng-click="nextQuestion()">Next
+		</button>
+		<span class="float-right"> <button class="btn btn-info" ng-click="reset()">Reset
+		</button>
+		</span>
+		
+	</div>
+	<div class="card-body">
+		<table class="table table-hover">
+			<thead class="thead-light">
+
+			</thead>
+			<tbody>
+				<div ng-show="showQ1" class="pl-4">
+					<p>
+						<b>What genre of music do you like to play?</b>
+					</p>
+				</div>
+				<div ng-show="showQ1" class="pl-5">
+					<label class="form-check-label"> <input type="radio"
+						class="form-check-input" ng-model="Q1" value="Rock">
+						Rock
+					</label><br> <label class="form-check-label"> <input
+						type="radio" class="form-check-input" ng-model="Q1" value="Blues">
+						Blues
+					</label><br> <label class="form-check-label"> <input
+						type="radio" class="form-check-input" ng-model="Q1" value="Country">
+						Country
+					</label><br> <label class="form-check-label"> <input
+						type="radio" class="form-check-input" ng-model="Q1" value="Folk">
+						Folk
+					</label> <br>
+					<br> <span ng-hide="hideAnswers"><b> 
+						</b></span><br>
+					<br>
+				</div>
+			</tbody>
+
+			<tbody>
+				<div ng-show="showQ2" class="pl-4">
+					<p>
+						<b>Are you playing the acoustic guitar or the electric guitar?</b>
+					</p>
+				</div>
+				<div ng-show="showQ2" class="pl-5">
+					<label class="form-check-label"> <input 
+						type="radio" class="form-check-input" ng-model="Q2" value="Acoustic">
+						Acoustic
+					</label><br> <label class="form-check-label"> <input
+						type="radio" class="form-check-input" ng-model="Q2" value="Electric">
+						Electric
+					</label> <br>
+					<br> <span ng-hide="hideAnswers"><b> 
+						 </b></span><br>
+					<br>
+				</div>
+			</tbody>
+			<tbody>
+				<div ng-show="showQ3" class="pl-4">
+					<p>
+						<b>Do you normally play rhythym patterns such as strumming full chords and power chords,
+						or do you play lead patterns such as single string bending and soloing? </b>
+					</p>
+				</div>
+				<div ng-show="showQ3" class="pl-5">
+					<label class="form-check-label"> <input 
+						type="radio" class="form-check-input" ng-model="Q3" value="Rhythym">
+						Rhythym Patterns
+					</label><br> <label class="form-check-label"> <input
+						type="radio" class="form-check-input" ng-model="Q3" value="Lead">
+						Lead Patterns
+					</label><br>
+					<br> <span ng-hide="hideAnswers"><b> 
+						 </b></span><br>
+					<br>
+				</div>
+			</tbody>
+			<tbody>
+				<div ng-show="showQ4" class="pl-4">
+					<p>
+						<b>What type of sound are you looking for?</b>
+					</p>
+				</div>
+				<div ng-show="showQ4" class="pl-5">
+					<label class="form-check-label"> <input 
+						type="radio" class="form-check-input" ng-model="Q4" value="Bright">
+						Bright sound
+					</label><br> <label class="form-check-label"> <input
+						type="radio" class="form-check-input" ng-model="Q4" value="Warm"> 
+						Warm sound
+					</label><br> <label class="form-check-label"> <input
+						type="radio" class="form-check-input" ng-model="Q4" value="Relaxed">
+					 	Relaxed sound
+					</label><br>
+					<br> <span ng-hide="hideAnswers"><b> 
+						</b></span><br>
+					<br>
+				</div>
+			</tbody>
+			<tbody>
+				<div ng-show="answer" class="pl-4">
+					<p>
+						<b>Based on your selections, we recommend: </b>
+					</p>
+					<div ng-bind="finalAnswer">
+					</div>
+				</div>
+				
+			</tbody>
+		</table>
+	</div>
+	<div class="card-footer"></div>
+</div>

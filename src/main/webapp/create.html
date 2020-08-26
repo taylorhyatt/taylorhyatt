@@ -1,0 +1,63 @@
+<h1>      
+</h1>
+<style>
+body {
+	background: url(https://wallpapercave.com/wp/HGDMVKU.jpg) no-repeat
+		center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+</style>
+
+<div class="row">
+	<div class="col-sm-7">
+		<div class="card">
+			<div class="card-header text-center">
+				<h3>Create New Guitar</h3>
+				<h5 class="text-success" ng-bind="createStatus"></h5>
+			</div>
+			<div class="card-body">
+				<form name="createForm">
+					<div class="form-group">
+						<label for="brand" class="font-weight-bold">Brand:</label> <select
+							ng-options="value for value in brand" required
+							ng-model="guitar.brand" class="form-control" id="brand">
+						</select>
+					</div>
+					<div class="form-group">
+						<label for="model" class="font-weight-bold">Model:</label> <input
+							ng-model="guitar.model" required ng-minlength="2" name="model"
+							type="text" class="form-control" id="model"> <span
+							class="text-danger" ng-if="!createForm.model.$valid"> must
+							be at least two characters </span>
+					</div>
+					<div class="form-group">
+						<label for="bodyStyle" class="font-weight-bold">Body
+							Style:</label> <input ng-model="guitar.bodyStyle" required
+							ng-minlength="2" name="bodyStyle" type="text"
+							class="form-control" id="bodyStyle"> <span
+							class="text-danger" ng-if="!createForm.bodyStyle.$valid">
+							must be at least two characters </span>
+					</div>
+					<div class="form-group">
+						<label for="releaseYear" class="font-weight-bold">Release
+							Year:</label> <input ng-model="guitar.releaseYear" max="2025" min="1935"
+							required type="number" class="form-control" id="releaseYear"
+							name="releaseYear"> <span class="text-danger"
+							ng-if="!createForm.releaseYear.$valid"> required and must
+							be between 1935 and 2020, inclusive </span>
+					</div>
+				</form>
+			</div>
+			<div class="card-footer text-center">
+				<button type="button" class="btn btn-success"
+					ng-disabled="createForm.$invalid || disableCreate"
+					ng-click="createGuitar()">Create</button>
+				<button type="button" class="btn btn-info" ng-click="clear()">Clear</button>
+			</div>
+		</div>
+	</div>
+	<div class="col-sm-5"></div>
+</div>

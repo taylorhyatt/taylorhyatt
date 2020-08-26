@@ -1,0 +1,36 @@
+<div class="row">
+	<div class="card">
+		<div class="card-header">
+			<h2>Subscribe Service</h2>
+			<div>Enter email address or phone number, press 'Subscribe'</div>
+			<div>Press 'Clear' to clear input.</div>
+		</div>
+		<div class="card-body">
+			<form name="subscribeForm">
+				<table class="table-borderless">
+					<tr>
+						<td><label>Phone Number:</label><br> <input type="number"
+							ng-model="phoneNumber"/></td>
+					</tr>
+					<tr>
+						<td><label>Email:</label><br> <input type="email"
+							ng-model="emailAddress"/></td>
+					</tr>
+				</table>
+			</form>
+		</div>
+		<div class="card-footer">
+			<button type="button" ng-click="subscribe()" class="btn btn-success">
+				Subscribe
+			</button>
+			<button type="button" ng-click="clear()" class="btn btn-warning">
+				<span class=""></span>Clear
+			</button>
+			<h5 class="text-center pt-2">
+				<span ng-bind="subscribeStatus"></span>
+			</h5>
+		</div>
+	</div>
+</div>
+
+

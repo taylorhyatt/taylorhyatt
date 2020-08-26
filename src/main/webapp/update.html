@@ -1,0 +1,69 @@
+<h1>Update Guitar</h1>
+<div class="row">
+	<div class="col-sm-7 bg-light">
+		<div class="card">
+			<div class="card-header text-center">
+				<h3>Guitar Update</h3>
+				<h5 class="text-success" ng-bind="updateStatus"></h5>
+			</div>
+		</div>
+		<div class="card-body">
+			<form name="updateForm">
+				<div class="form-group">
+					<label for="brand" class="font-weight-bold">Brand:</label> <select
+						ng-options="value for value in brand" required
+						ng-model="guitar.brand" class="form-control" id="brand">
+					</select>
+				</div>
+				<div class="form-group">
+					<label for="model" class="font-weight-bold">Model:</label> <input
+						ng-model="guitar.model" required ng-minlength="2" name="model"
+						type="text" class="form-control" id="model"> <span
+						class="text-danger" ng-if="!updateForm.model.$valid"> must
+						be at least two characters </span>
+				</div>
+				<div class="form-group">
+					<label for="bodyStyle" class="font-weight-bold">Body Style:</label>
+					<input ng-model="guitar.bodyStyle" required ng-minlength="2"
+						name="bodyStyle" type="text" class="form-control" id="bodyStyle">
+					<span class="text-danger" ng-if="!updateForm.bodyStyle.$valid">
+						must be at least two characters </span>
+				</div>
+				<div class="form-group">
+					<label for="releaseYear" class="font-weight-bold">Release
+						Year:</label> <input ng-model="guitar.releaseYear" max="2025" min="1935"
+						required type="number" class="form-control" id="releaseYear"
+						name="releaseYear"> <span class="text-danger"
+						ng-if="!updateForm.releaseYear.$valid"> required and must
+						be between 1935 and 2020, inclusive </span>
+				</div>
+				<div>
+					<span class="font-weight-bold">Guitar ID:</span> <span
+						ng-bind="guitar.id" id="id"></span>
+				</div>
+				<div>
+					<span class="font-weight-bold">Create Date:</span> <span
+						ng-bind="guitar.createDateTime" id="create"></span>
+				</div>
+				<div>
+					<span class="font-weight-bold">Update Date:</span> <span
+						ng-bind="guitar.updateDateTime" id="update"></span>
+				</div>
+			</form>
+		</div>
+		<div class="card-footer text-center">
+			<button type="button" class="btn btn-success"
+				ng-disabled="updateForm.$invalid" ng-click="updateGuitar()">Update</button>
+			<button type="button" class="btn btn-danger"
+				ng-disabled="updateForm.$invalid || disableUpdate"
+				ng-click="deleteGuitar()">Delete</button>
+			<button type="button" class="btn btn-info"
+				ng-click="goToSearchView()">Cancel</button>
+		</div>
+	</div>
+	<div class="col-sm-5">
+		<div class="pt-5">
+			<img class="img-fluid rounded-circle" src="./image/movie_splash.jpg">
+		</div>
+	</div>
+</div>

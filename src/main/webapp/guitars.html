@@ -1,0 +1,38 @@
+
+<div class="card">
+	<div class="card-header">
+		<h4>Guitars</h4>
+		<button class="btn btn-success" ng-click="getAllGuitars()">Refresh
+			Guitars</button>
+		<span class="float-right"> Search: <input type="text"
+			maxlength="15" ng-model="searchValue">
+		</span>
+	</div>
+	<div class="card-body">
+		<table class="table table-hover">
+			<thead class="thead-light">
+				<tr>
+					<th>Guitar ID</th>
+					<th>Brand</th>
+					<th>Model</th>
+					<th>Body Style</th>
+					<th>Release Year</th>
+					<th>Create Date</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="guitar in guitars | filter:searchValue"
+					ng-click="goToUpdateView(guitar.id)">
+					<td>{{guitar.id}}</td>
+					<td>{{guitar.brand | uppercase }}</td>
+					<td>{{guitar.model}}</td>
+					<td>{{guitar.bodyStyle}}</td>
+					<td>{{guitar.releaseYear | limitTo:4}}</td>
+					<td>{{guitar.createDateTime | limitTo:10}}</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<div class="card-footer">Please select a Guitar for update/delete
+	</div>
+</div>
